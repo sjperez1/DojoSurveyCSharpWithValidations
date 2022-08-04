@@ -1,0 +1,68 @@
+﻿@model Form
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/styles.css">
+    <title>Results</title>
+</head>
+<body>
+    <form asp-action="Display" asp-controller="Home" method="post">
+        <div class="formline">
+            <label asp-for="name"></label>
+            <input class="form-control-sm" type="text" asp-for="name">
+        </div>
+        <span asp-validation-for="name"></span>
+        <div class="formline">
+            <label asp-for="location"></label>
+            <select asp-for="location" class="form-control-sm">
+                <option hidden disabled selected></option>
+                <option value="San Jose">
+                    San Jose
+                </option>
+                <option value="LA">
+                    LA
+                </option>
+                <option value="Bellevue">
+                    Bellevue
+                </option>
+                <option value="Silicon Valley">
+                    Silicon Valley
+                </option>
+            </select>
+        </div>
+        <span asp-validation-for="location"></span>
+        <div class="formline">
+            <label asp-for="language"></label>
+            <select asp-for="language" class="form-control-sm">
+                <option hidden disabled selected></option>
+                <option value="Python">
+                    Python
+                </option>
+                <option value="HTML">
+                    HTML
+                </option>
+                <option value="CSS">
+                    C#
+                </option>
+                <option value="JavaScript">
+                    JavaScript
+                </option>
+            </select>
+        </div>
+        <span asp-validation-for="language"></span>
+        <div>
+            <label asp-for="comment"></label>
+            <div>
+                <textarea asp-for="comment" cols="45" rows="8"></textarea>
+            </div>
+            <span asp-validation-for="comment"></span>
+        </div>
+        <button class="btn btn-outline-dark" type="submit">Submit</button>
+    </form>
+</body>
+</html>
