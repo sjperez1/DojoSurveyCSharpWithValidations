@@ -30,19 +30,13 @@ public class HomeController : Controller
         if(ModelState.IsValid)
         {
             // View is a function in the MVC library
-            return RedirectToAction("Results");
+            return View("Display",formSubmission);
         }
         else
         {
             return View("Index");
         }
     }
-    public IActionResult Results(Form formSubmission)
-    {
-            return View("Display");
-    }
-
-
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
