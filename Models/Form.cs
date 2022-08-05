@@ -4,21 +4,21 @@ using System.ComponentModel.DataAnnotations;
 // namespace ViewModelFun.Models
 public class Form
 {
-    [Required]
-    [MinLength(2)]
+    [Required(ErrorMessage = "Name is required")]
+    [MinLength(2, ErrorMessage = "Name must be at least two characters")]
     [Display(Name = "Your name:")]
     // [NoName] is how you add your custom validation to here.
     public string name {get; set;}
 
-    [Required]
+    [Required(ErrorMessage = "Location is required")]
     [Display(Name = "Dojo Location:")]
     public string location {get; set;}
 
-    [Required]
+    [Required(ErrorMessage = "Language is required")]
     [Display(Name = "Favorite Language:")]
     public string language {get; set;}
 
-    [MinLength(20)]
+    [MinLength(20, ErrorMessage = "If a comment is included, it must be at least 20 characters")]
     [Display(Name = "Comment (optional):")]
     public string? comment {get; set;}
 }

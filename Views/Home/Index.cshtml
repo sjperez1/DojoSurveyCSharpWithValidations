@@ -11,13 +11,14 @@
     <title>Results</title>
 </head>
 <body>
+    <h1 class="mb-4">Dojo Survey</h1>
     <form asp-action="Display" asp-controller="Home" method="post">
-        <div class="formline">
+        <div class="formline mb-3">
             <label asp-for="name"></label>
             <input class="form-control-sm" type="text" asp-for="name">
         </div>
         <span asp-validation-for="name"></span>
-        <div class="formline">
+        <div class="formline mb-3">
             <label asp-for="location"></label>
             <select asp-for="location" class="form-control-sm">
                 <option hidden disabled selected></option>
@@ -36,7 +37,7 @@
             </select>
         </div>
         <span asp-validation-for="location"></span>
-        <div class="formline">
+        <div class="formline mb-3">
             <label asp-for="language"></label>
             <select asp-for="language" class="form-control-sm">
                 <option hidden disabled selected></option>

@@ -30,15 +30,14 @@ public class HomeController : Controller
         if(ModelState.IsValid)
         {
             // View is a function in the MVC library
-            // ASK ABOUT REDIRECTTOACTION
-            return RedirectToAction("Results", formSubmission);
+            return RedirectToAction("Results");
         }
         else
         {
             return View("Index");
         }
     }
-    public IActionResult Results()
+    public IActionResult Results(Form formSubmission)
     {
             return View("Display");
     }
